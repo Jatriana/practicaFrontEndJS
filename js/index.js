@@ -2,9 +2,61 @@
 const loader = document.querySelector('.lds-ring');
 loader.classList.add('hidden')
 
-for(let i = 0 ; i < 8 ; i++){
+// function cargarAnuncios(){
+//     fetch('../lib/db.json')
+//     .then(respuetas =>respuetas.json())
+//     .then(respuesta => console.log(respuesta));
+// }
 
-    const anuncio = document.createElement('article');
+const anuncios = [
+    {
+      "nombre": "bicicleta",
+      "operacion": "venta",
+      "precio": 230.15,
+      "descripcion": "Vendo bicicleta nueva, solo se le ha dado un uso. La vendo por no usarla ",
+      "foto": "bici.jpg",
+      "tags": ["lifestyle", "movilidad", "articulos"]
+    },
+    {
+      "nombre": "moto",
+      "operacion": "compra",
+      "precio": 1650.0,
+      "descripcion": " Compro motro Marca Rata, usada de no me importa el estado",
+      "foto": "moto.jpg",
+      "tags": ["lifestyle", "movilidad", "articulos"]
+    },
+    {
+      "nombre": "coche",
+      "operacion": "venta",
+      "precio": 11650.0,
+      "descripcion": "Peugeot 406 Sedan en Toledo",
+      "foto": "cpche.jpg",
+      "tags": ["lifestyle", "movilidad", "articulos"]
+    },
+    {
+      "nombre": "cama",
+      "operacion": "compra",
+      "precio": 650.0,
+      "descripcion": "able abatible. Gran capacidad. Colchón Flex. Medidas 150x190",
+      "foto": "cama.jpg",
+      "tags": ["lifestyle", "house", "articulos"]
+    },
+    {
+      "nombre": "Iphone 6S",
+      "operacion": "venta",
+      "precio": 500,
+      "descripcion": "Iphone 6s de 32gb Prácticamente sin uso.",
+      "foto": "iphone6s.jpg",
+      "tags": ["lifestyle", "mobile", "articulos"]
+    }
+    
+];
+
+const lista = document.querySelector('.posts-list');
+
+for(const anuncio of anuncios){
+
+    const anuncioElemento = document.createElement('article');
     const anuncioHTML = `<div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
@@ -25,14 +77,14 @@ for(let i = 0 ; i < 8 ; i++){
           </figure>
         </div>
         <div class="media-content">
-          <p class="nombre">Bicicleta</p>
-          <p class="precio">90 $</p>
+          <p class="nombre">${anuncio.nombre}</p>
+          <p class="precio">${anuncio.precio}$</p>
+          <p class="operacion">${anuncio.operacion}</p>
         </div>
       </div>
 
       <div class="content">
-          Vendo bicicleta nueva, Cruise City stile. Comprada en octubre y solo se le ha dado un uso.
-           La vendo por no usarla. La entrego tal cual se ve en las fotos. Es de 28'. City &amp; trekking.
+         ${anuncio.descripcion}
          <a>@bulmaio</a>.
         <a href="#">#css</a> <a href="#">#responsive</a>
         <br />
@@ -41,9 +93,8 @@ for(let i = 0 ; i < 8 ; i++){
     </div>
   </div>`;
 
-    anuncio.innerHTML= anuncioHTML;
-    const lista = document.querySelector('.posts-list');
-    lista.appendChild(anuncio);
+    anuncioElemento.innerHTML= anuncioHTML;
+    lista.appendChild(anuncioElemento);
 
     
     
