@@ -1,8 +1,5 @@
 
-
-export default{
-
-getAnuncios: () =>{
+function getFockinAnuncios(){
 
     return  [
         {
@@ -48,6 +45,40 @@ getAnuncios: () =>{
           tags: ["lifestyle", "mobile", "articulos"],
         }
       ];
-
 }
+
+
+
+
+
+export default {
+  getAnuncios: () => {
+    //   fetch('../lib/db.json')
+    //   .then(respuetas =>respuetas.json())
+    //   .then(respuesta => console.log(respuesta));
+    // const response = await fetch('../lib/db.json');
+    //         const data = response.json();
+    //         console.log(data)
+    //         return data;
+    //     }
+   
+    const promise = new Promise((resolve, reject) => {
+        // resolve -> callback cuando todo va bien
+        // reject -> callback cuando algo va mal
+        setTimeout(() => {
+            const anuncios = getFockinAnuncios();
+            if (anuncios.length === 0) {
+                reject(anuncios);
+            } else {
+                resolve(anuncios);
+            }
+        }, Math.random() * 5000)
+    });
+    return promise
+
+
+
+
+
+    }
 }
