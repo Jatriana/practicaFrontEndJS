@@ -16,9 +16,14 @@ window.addEventListener("DOMContentLoaded", async (evento) => {
     }
   };
   const avisarDelError = (error) => {
-    console.error("no se cargan los anuncios");
+    console.error("no se cargan los anuncios", error);
   };
-  dataService.getAnuncios().then(cargarAnuncios).catch(avisarDelError);
-
+  
+  try {
+    const anuncios = await dataService.getAnuncios()
+    cargarAnuncios(anuncios)
+  } catch (error) {
+      avisarDelError(error);
+  }
    
 });
