@@ -1,7 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma-rtl.min.css";
 
 /*loader  */
-.lds-ring {
+.lds-ring, .global-errors {
     display: block;
     position: fixed;
     z-index: 1;
@@ -12,7 +12,7 @@
     background-color: rgba(255, 255, 255, 0.8); /* Black w/ opacity */
 
   }
-    .lds-ring.hidden{
+    .lds-ring.hidden, .global-errors.hidden{
       display: none;
   }
   .lds-ring div {
