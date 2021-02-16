@@ -1,12 +1,12 @@
 import BaseController from './BaseController.js';
 import {vistaError} from '../view/view.js';
-import PubSub from '../service/Pubsub.js';
+
 
 export default class ErrorController extends BaseController{
 
     constructor(elemento) {
         super(elemento);
-        this.PubSub.subscribe(this.events.ERROR, (error) => {
+        this.PubSub.subscribe(this.eventos.ERROR, (error) => {
             this.mostarError(error);
         });
     }

@@ -25,17 +25,17 @@ export default class PostsListController extends BaseController {
 
     async cargarAnuncios(){
       
-        PubSub.publish(this.eventos.START_LOADING, {});
+        this.PubSub.publish(this.eventos.START_LOADING, {});
         // this.cargando.mostarLoader()
         try {
             const anuncios = await DataService.obtenerAnuncios()
             this.pintarAnuncios(anuncios)
           } catch (error) {
               console.error(error);
-              PubSub.publish(this.eventos.ERROR, error);
+              this.PubSub.publish(this.eventos.ERROR, error);
           }finally{
           //  this.cargando.ocultarLoader()
-           PubSub.publish(this.eventos.FINISH_LOADING, {});
+           this.PubSub.publish(this.eventos.FINISH_LOADING, {});
           }
     };
 };
