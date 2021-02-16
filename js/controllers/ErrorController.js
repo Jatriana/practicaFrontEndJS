@@ -6,7 +6,7 @@ export default class ErrorController extends BaseController{
 
     constructor(elemento) {
         super(elemento);
-        PubSub.subscribe('error', (error) => {
+        this.PubSub.subscribe(this.events.ERROR, (error) => {
             this.mostarError(error);
         });
     }

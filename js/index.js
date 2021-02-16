@@ -3,7 +3,7 @@ import PostsListController from './controllers/Postslistcontroller.js';
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
 
-window.addEventListener("DOMContentLoaded", async (evento) => {
+window.addEventListener("DOMContentLoaded",  (evento) => {
   
     const cargando = document.querySelector('.lds-ring');
     const loaderController = new LoaderController(cargando);
