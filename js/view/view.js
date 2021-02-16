@@ -1,6 +1,6 @@
 
 
-export const anuncioView = (anuncio) =>{
+export const vistaAnuncio = (anuncio) =>{
     return `<div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
@@ -36,5 +36,20 @@ export const anuncioView = (anuncio) =>{
       </div>
     </div>
   </div>`
+
+}
+
+export const vistaError = (errorMensaje) =>{
+
+
+  return `<article class="message is-danger">
+  <div class="message-header">
+    <p>Error</p>
+    <button class="delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    ${errorMensaje}
+  </div>
+</article>`
 
 }

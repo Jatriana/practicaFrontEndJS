@@ -1,6 +1,6 @@
 import BaseController from "./BaseController.js";
 import DataService from '../service/DataService.js';
-import {anuncioView} from '../view/view.js';
+import {vistaAnuncio} from '../view/view.js';
 import pubSub from '../service/Pubsub.js';
 
 
@@ -15,7 +15,7 @@ export default class PostsListController extends BaseController {
             for (const anuncio of anuncios) {
               const article = document.createElement('article');
                      
-              article.innerHTML = anuncioView(anuncio);
+              article.innerHTML = vistaAnuncio(anuncio);
               this.elemento.appendChild(article);
             }
           
