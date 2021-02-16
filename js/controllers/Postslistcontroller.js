@@ -1,7 +1,7 @@
 import BaseController from "./BaseController.js";
 import DataService from '../service/DataService.js';
 import {vistaAnuncio} from '../view/view.js';
-import pubSub from '../service/Pubsub.js';
+import PubSub from '../service/Pubsub.js';
 
 
 
@@ -24,17 +24,18 @@ export default class PostsListController extends BaseController {
 
 
     async cargarAnuncios(){
-      var $this = this
-        //pubSub.publish('startLoading', {});
+      
+        PubSub.publish('startLoading', {});
         // this.cargando.mostarLoader()
         try {
             const anuncios = await DataService.obtenerAnuncios()
             this.pintarAnuncios(anuncios)
           } catch (error) {
-              console(error);
+              console.error(error);
+              PubSub.publish('error', error);
           }finally{
           //  this.cargando.ocultarLoader()
-            //pubSub.publish('finishLoading', {});
+           PubSub.publish('finishLoading', {});
           }
     };
 };

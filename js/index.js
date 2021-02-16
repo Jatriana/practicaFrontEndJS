@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", async (evento) => {
   
     const elemento = document.querySelector('.posts-list');
     const  controller = new PostsListController(elemento);
-    controller.cargando = loaderController.ocultarLoader()
     controller.cargarAnuncios();
 
     
@@ -20,5 +19,5 @@ window.addEventListener("DOMContentLoaded", async (evento) => {
   
    const errorElemento = document.querySelector('.global-errors');
    const errorController = new ErrorController(errorElemento);
-   errorController.mostarError('que pasa madafaka');
+   
 });
