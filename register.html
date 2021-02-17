@@ -10,20 +10,21 @@
 </head>
 
 <body>
+    <!-- // ventana de cargando  -->
     <div class="lds-ring hidden">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
     </div>
-
+<!-- // ventana de aviso de error -->
     <div class="global-errors hidden"></div>
-
+<!-- // formulario de registro -->
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
                 <h1 class="title">Register</h1>
-                <form novalidate>
+                    <form novalidate>   <!-- // novalidete evita que el html valide el formulario -->
                     <div class="field">
                         <p class="control has-icons-left has-icons-right">
                             <input name="email" class="input" type="email" placeholder="Email" required>

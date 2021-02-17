@@ -9,6 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorsElemento = document.querySelector('.global-errors');
     const errorController = new ErrorController(errorsElemento);
 
-    const formElemento = document.querySelector('form');
-    const formController = new RegisterFormController(formElemento);
+    const formularioElemento = document.querySelector('form');
+    const formController = new RegisterFormController(formularioElemento);
 });

@@ -1,4 +1,5 @@
 import BaseController from './BaseController.js';
+import DataService from '../service/DataService.js';
 
 
 export default class RegisterFormController extends BaseController {
@@ -10,14 +11,26 @@ export default class RegisterFormController extends BaseController {
 
     attachEventListener() {
         
-        this.elemento.addEventListener('submit', (event) => {
-            event.preventDefault();  // evita que se enví el formulario (comportamiento por defecto)
-            console.log('SE ENVIA EL FORMULARIO', this.element.validity);
+        this.elemento.addEventListener('submit', async (evento) => {
+            evento.preventDefault();  // evita que se enví el formulario (comportamiento por defecto)
+            const user = {
+                username: this.elemento.elements.email.value,
+                password: this.elemento.elements.password.value
+            };
+            this.publish(this.eventos.START_LOADING);
+            try {
+                const data = await DataService.registroUsuario(user)
+            } catch(error) {
+                this.publish(this.eventos.ERROR, error);
+            } finally {
+                this.publish(this.eventos.FINISH_LOADING);
+            }
         });
 
         this.elemento.querySelectorAll('input').forEach(input => {
             const button = this.elemento.querySelector('button');
             input.addEventListener('keyup', event => { 
+                console.log('estoy escribiendo ', this.elemento.checkValidity())
                 // si el input es OK lo marco en verde, si no, en rojo
                 if (input.validity.valid) {
                     input.classList.add('is-success');
