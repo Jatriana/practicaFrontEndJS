@@ -24,12 +24,12 @@ export default {
       body: JSON.stringify(user)
     }
     const url = `${BASE_URL}/auth/register`;
-    const respuesta = await fetch(url, config);
-    const data = respuesta.json();
-    if(respuesta.ok){
+    const response = await fetch(url, config);
+    const data = await response.json();
+    if(response.ok){
       return data;
     }else{
-      throw new Error(data)
+      throw new Error(data.message || JSON.stringify(data))
     }
 
   }
