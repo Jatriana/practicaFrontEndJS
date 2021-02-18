@@ -2,7 +2,7 @@ import BaseController from './BaseController.js';
 import DataService from '../service/DataService.js';
 
 
-export default class RegisterFormController extends BaseController {
+export default class LoginFormController extends BaseController {
 
     constructor(elemento) {
         super(elemento);
@@ -20,8 +20,7 @@ export default class RegisterFormController extends BaseController {
             this.publish(this.eventos.START_LOADING);
             try {
                 const data = await DataService.registroUsuario(user)
-                alert('Usuario creado con éxito!');
-                window.location.href = '/login.html';  // envía al usuario a la página de login
+                
             } catch(error) {
                 this.publish(this.eventos.ERROR, error);
             } finally {
