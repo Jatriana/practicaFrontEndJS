@@ -19,7 +19,8 @@ export default class LoginFormController extends BaseController {
             };
             this.publish(this.eventos.START_LOADING);
             try {
-                const data = await DataService.registroUsuario(user)
+                const data = await DataService.login(user)
+                console.log('login ok ',data)
                 
             } catch(error) {
                 this.publish(this.eventos.ERROR, error);
