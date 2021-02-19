@@ -20,7 +20,9 @@ export default class LoginFormController extends BaseController {
             this.publish(this.eventos.START_LOADING);
             try {
                 const data = await DataService.login(user)
-                console.log('login ok ',data)
+                console.log('login ok ',data);
+                DataService.guardarToken(data.accessToken);
+                window.location.href = '/';
                 
             } catch(error) {
                 this.publish(this.eventos.ERROR, error);
