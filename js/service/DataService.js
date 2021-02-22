@@ -59,8 +59,14 @@ export default {
 
   },
 
-  obtenerToken: async function (token){
-    return localStorage.setItem(TOKEN_KEY, token);
+  obtenerToken: async function (){
+    return localStorage.getItem(TOKEN_KEY);
+  },
+
+  usuarioConAcceso: async function(){
+    const token = await this.obtenerToken();
+    return token !== null;
+
   }
 
 };

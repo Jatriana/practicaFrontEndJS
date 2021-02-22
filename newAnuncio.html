@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppAnuncios</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    
+
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <div class="global-errors hidden">
+        
+      </div>
+    </div>
+    <div class="container">
+        <div class="colummn">
+            <div class="column is-two-thirds">
+              <h1 class="title">Nuevo Anuncio</h1>
+              <form>
+                 
+              <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input name="nombre" class="input" type="text" placeholder="Nombre del articulo" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input name="precio" class="input" type="text" placeholder="Precio" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            <div class="field">
+              <p class="control has-icons-left">
+                  <input name="categoria" class="input" type="text" placeholder="Venta o Compra" required>
+                  <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                  </span>
+              </p>
+          </div>
+
+              <textarea name="descripcion" class="textarea" placeholder="Descripcion del articulo..." required></textarea>
+              <input type="file" name="file" accept="image/*">
+              <button class="button is-primary is-pulled-right" disabled>Publicar</button>
+          </form>
+                    
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="js/newAnuncio.js" ></script>
+  </body>
+</html>
