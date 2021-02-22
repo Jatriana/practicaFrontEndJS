@@ -48,7 +48,7 @@ export default {
   guardarToken: async function(token){
     localStorage.setItem(TOKEN_KEY, token);
 
-  }
+  },
 
   obtenerToken: async function (token){
     return localStorage.setItem(TOKEN_KEY, token);
