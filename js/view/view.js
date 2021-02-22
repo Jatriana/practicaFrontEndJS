@@ -29,10 +29,10 @@ export const vistaAnuncio = (anuncio) =>{
 
       <div class="content">
          ${anuncio.descripcion}
-         <a>@bulmaio</a>.
+         <a>${anuncio.autor}</a>.
         <a href="#">#css</a> <a href="#">#responsive</a>
         <br />
-        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+        <time datetime=${anuncio.date}</time>
       </div>
     </div>
   </div>`

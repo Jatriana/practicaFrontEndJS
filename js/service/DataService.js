@@ -7,11 +7,20 @@ const TOKEN_KEY = 'token';
 
 export default {
   obtenerAnuncios: async () => {
-    const url = `${BASE_URL}/api/posts`;
+    const url = `${BASE_URL}/api/anuncios?_expand=user`;
     const respuesta = await fetch(url);
     if (respuesta.ok) {
-      const datos = respuesta.json();
-      return datos;
+      const datos = await respuesta.json();
+      return datos.map(anuncio =>{
+        return{
+            nombre: anuncio.nombre,
+            operacion: anuncio.operacion,
+            precio :anuncio.precio,
+            descripcion: anuncio.descripcion,
+            date: anuncio.createdAt,
+            autor: anuncio.user.username
+        }
+      })
     } else {
       throw new Error(`HTML Error : ${respuesta.status}`);
     }
