@@ -1,6 +1,6 @@
 import LoaderController from './controllers/LoaderController.js';
 import ErrorController from './controllers/ErrorController.js';
-import NewAnuncioFormController from '';
+import NewAnuncioFormController from './controllers/newAnuncioFormController.js';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,5 +11,5 @@ window.addEventListener('DOMContentLoaded', () => {
     const errorController = new ErrorController(errorsElemento);
 
     const formularioElemento = document.querySelector('form');
-    const loginController = new LoginFormController(formularioElemento);
+    const newAnuncio = new NewAnuncioFormController(formularioElemento);
 });
