@@ -13,11 +13,11 @@ export default {
       const datos = await respuesta.json();
       return datos.map(anuncio =>{
         return{
-            nombre: anuncio.nombre,
-            operacion: anuncio.operacion,
-            precio :anuncio.precio,
-            descripcion: anuncio.descripcion,
-            date: anuncio.createdAt,
+            nombre: anuncio.nombre.replace(/(<([^>]+)>)/gi, ""),
+            operacion: anuncio.operacion.replace(/(<([^>]+)>)/gi, ""),
+            precio :anuncio.precio.replace(/(<([^>]+)>)/gi, ""),
+            descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
+            date: anuncio.createdAt || anuncio.updatedAt,
             autor: anuncio.user.username
         }
       })
