@@ -73,7 +73,7 @@ export default class NewAnuncioFormController extends BaseController{
             const anuncio = {
                 nombre:this.elemento.elements.nombre.value,
                 precio: this.elemento.elements.precio.value,
-                categoria: this.elemento.elements.categoria.value,
+                operacion: this.elemento.elements.operacion.value,
                 descripcion : this.elemento.elements.descripcion.value,
                 foto: null
             }
@@ -83,7 +83,7 @@ export default class NewAnuncioFormController extends BaseController{
             this.publish(this.eventos.START_LOADING);
             try {
                 await DataService.guardarAnuncio(anuncio);
-                // window.location.href = '/?mensaje=anuncioOK'
+                 window.location.href = '/?mensaje=anuncioOK'
             } catch (error) {
                 this.publish(this.eventos.ERROR, error)
             } finally {

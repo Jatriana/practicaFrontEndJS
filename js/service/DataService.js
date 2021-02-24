@@ -7,7 +7,7 @@ const TOKEN_KEY = 'token';
 
 export default {
   obtenerAnuncios: async () => {
-    const url = `${BASE_URL}/api/anuncios?_expand=user`;
+    const url = `${BASE_URL}/api/anuncios?_expand=user&_sort=id&_order=desc`;
     const respuesta = await fetch(url);
     if (respuesta.ok) {
       const datos = await respuesta.json();
@@ -33,7 +33,10 @@ export default {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(postData)
     }
-    
+    const token = await this.obtenerToken();
+        if (token) {
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
     const response = await fetch(url, config);
     const data = await response.json();
     if(response.ok){
