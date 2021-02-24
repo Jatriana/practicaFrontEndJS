@@ -67,6 +67,13 @@ export default {
     const token = await this.obtenerToken();
     return token !== null;
 
+  },
+
+  guardarAnuncio: async function(anuncio){
+    const url = `${BASE_URL}/api/anuncios`
+    return await this.post(url, anuncio);
+
+
   }
 
 };
