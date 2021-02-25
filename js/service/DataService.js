@@ -17,6 +17,7 @@ export default {
             operacion: anuncio.operacion.replace(/(<([^>]+)>)/gi, ""),
             precio : anuncio.precio,
             descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
+            foto: anuncio.foto || null,
             date: anuncio.createdAt || anuncio.updatedAt,
             autor: anuncio.user.username
         }
@@ -27,11 +28,17 @@ export default {
   },
 
 
-  post: async function (url, postData){
-    const config ={
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(postData)
+  post: async function(url, postData, json=true) {
+    const config = {
+        method: 'POST',
+        headers: {},
+        body: null
+    };
+    if (json) {
+        config.headers['Content-Type'] = 'application/json';
+        config.body = JSON.stringify(postData);  // convierte el objeto de usuarios en un JSON
+    } else {
+        config.body = postData;
     }
     const token = await this.obtenerToken();
         if (token) {
@@ -74,10 +81,22 @@ export default {
 
   guardarAnuncio: async function(anuncio){
     const url = `${BASE_URL}/api/anuncios`
+    if (anuncio.foto) {
+      const imageURL = await this.subirImagen(anuncio.foto);
+      anuncio.foto = imageURL;
+  }
     return await this.post(url, anuncio);
 
+  },
 
-  }
+  subirImagen : async function(image) {
+    const form = new FormData();
+    form.append('file', image);
+    const url = `${BASE_URL}/upload`;
+    const response = await this.post(url, form, false);
+    console.log('subirImagen', response);
+    return response.path || null;
+}
 
 };
 
