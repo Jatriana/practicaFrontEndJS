@@ -2,6 +2,11 @@
 
 export const vistaAnuncio = (anuncio) =>{
 
+  let deleteButtonHTML = '';
+  if (anuncio.canBeDeleted) {
+    deleteButtonHTML = '<button class="button is-danger">Borrar</button>';
+  }
+
   let imgHTML= '';
   if(anuncio.foto){
     imgHTML=`<div class="card-image">
@@ -30,7 +35,9 @@ export const vistaAnuncio = (anuncio) =>{
          <a>${anuncio.autor}</a>.
         <a href="#">#css</a> <a href="#">#responsive</a>
         <br />
-        <time datetime=${anuncio.date}</time>
+        <time datetime="${anuncio.date}">${anuncio.date}</time>
+        <br>
+        ${deleteButtonHTML}
       </div>
     </div>
   </div>`

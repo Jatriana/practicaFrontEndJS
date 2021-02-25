@@ -96,7 +96,23 @@ export default {
     const response = await this.post(url, form, false);
     console.log('subirImagen', response);
     return response.path || null;
-}
+  },
+
+  identificarUsuario: async function() {
+    try {
+        const token = await this.obtenerToken();
+        const tokenParts = token.split('.');
+        if (tokenParts.length !== 3) {
+            return null;
+        }
+        const payload = tokenParts[1]; // cogemos el payload, codificado en base64
+        const jsonStr = atob(payload); // descodificamos el base64
+        const { userId, username } = JSON.parse(jsonStr); // parseamos el JSON del token descodificado
+        return { userId, username };
+    } catch (error) {
+        return null;
+    }
+  },
 
 };
 
