@@ -22,8 +22,13 @@ export default class LoginFormController extends BaseController {
                 const data = await DataService.login(user)
                 console.log('login ok ',data);
                 DataService.guardarToken(data.accessToken);
-                window.location.href = '/';
-                
+                let next = '/';
+                const queryParams = window.location.search.replace('?', '');  // ?next=otrapagina -> next=otrapagina
+                const queryParamsParts = queryParams.split('=');
+                if (queryParamsParts.length >= 2 && queryParamsParts[0] === 'next') {
+                  next = queryParamsParts[1];
+                }
+                window.location.href = next;
             } catch(error) {
                 this.publish(this.eventos.ERROR, error);
             } finally {

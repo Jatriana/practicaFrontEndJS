@@ -14,7 +14,7 @@ export default class NewAnuncioFormController extends BaseController{
    async chequearUsuarioConAcceso(){
         const usuarioAcceso = await DataService.usuarioConAcceso();
         if(!usuarioAcceso){
-            window.location.href='/login.html';
+            window.location.href='/login.html?next=/newAnuncio.html';
         }else{
             this.publish(this.eventos.FINISH_LOADING);
         }

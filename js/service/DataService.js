@@ -15,7 +15,7 @@ export default {
         return{
             nombre: anuncio.nombre.replace(/(<([^>]+)>)/gi, ""),
             operacion: anuncio.operacion.replace(/(<([^>]+)>)/gi, ""),
-            precio :anuncio.precio.replace(/(<([^>]+)>)/gi, ""),
+            precio : anuncio.precio,
             descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
             date: anuncio.createdAt || anuncio.updatedAt,
             autor: anuncio.user.username
