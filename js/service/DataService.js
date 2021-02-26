@@ -6,7 +6,9 @@ const TOKEN_KEY = 'token';
 
 
 export default {
-  obtenerAnuncios: async () => {
+  obtenerAnuncios: async function() {
+
+    const usuarioActual = await this.identificarUsuario();
     const url = `${BASE_URL}/api/anuncios?_expand=user&_sort=id&_order=desc`;
     const respuesta = await fetch(url);
     if (respuesta.ok) {
@@ -19,7 +21,8 @@ export default {
             descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
             foto: anuncio.foto || null,
             date: anuncio.createdAt || anuncio.updatedAt,
-            autor: anuncio.user.username
+            autor: anuncio.user.username,
+            puedeSerBorrado: usuarioActual ? usuarioActual.userId ==anuncio.userId: false
         }
       })
     } else {
@@ -112,7 +115,7 @@ export default {
     } catch (error) {
         return null;
     }
-  },
+  }
 
 };
 

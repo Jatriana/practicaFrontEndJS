@@ -3,7 +3,7 @@
 export const vistaAnuncio = (anuncio) =>{
 
   let deleteButtonHTML = '';
-  if (anuncio.canBeDeleted) {
+  if (anuncio.puedeSerBorrado) {
     deleteButtonHTML = '<button class="button is-danger">Borrar</button>';
   }
 
