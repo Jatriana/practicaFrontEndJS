@@ -1,7 +1,6 @@
 import BaseController from "./BaseController.js";
 import DataService from "../service/DataService.js";
 import { vistaAnuncio } from "../view/view.js";
-import PostsDetailsController from "./PostDetailsController.js";
 
 export default class PostsListController extends BaseController {
   pintarAnuncios(anuncios) {
@@ -18,17 +17,18 @@ export default class PostsListController extends BaseController {
       });
 
       //logigas de borrar el anuncio
-      // const borrarButton = article.querySelector('button');
-      // if(borrarButton){
-      //   borrarButton.addEventListener('click', async evento =>{
-
-      //     const confirmacionBorrado = confirm('¿seguro que quieres borrar el anuncio?');
-      //     if(confirmacionBorrado){
-      //       console.log('borrar el anuncio', confirmacionBorrado);
-      //       await DataService.borrarAnuncio(anuncio);
-      //     }
-      //   })
-      // }
+      const borrarButton = article.querySelector("button");
+      if (borrarButton) {
+        borrarButton.addEventListener("click", async (evento) => {
+          const confirmacionBorrado = confirm(
+            "¿seguro que quieres borrar el anuncio?"
+          );
+          if (confirmacionBorrado) {
+            console.log("borrar el anuncio", confirmacionBorrado);
+            await DataService.borrarAnuncio(anuncio);
+          }
+        });
+      }
 
       this.elemento.appendChild(article);
     }

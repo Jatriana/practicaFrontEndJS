@@ -7,7 +7,7 @@ const TOKEN_KEY = 'token';
 
 export default {
   obtenerAnuncios: async function(query=null) {
-
+    
     const usuarioActual = await this.identificarUsuario();
     let url = `${BASE_URL}/api/anuncios?_expand=user&_sort=id&_order=desc`;
     if (query) {
@@ -16,6 +16,7 @@ export default {
     const respuesta = await fetch(url);
     if (respuesta.ok) {
       const datos = await respuesta.json();
+      
       return datos.map(anuncio =>{
         return{
             nombre: anuncio.nombre.replace(/(<([^>]+)>)/gi, ""),
