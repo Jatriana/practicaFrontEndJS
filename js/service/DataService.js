@@ -6,10 +6,13 @@ const TOKEN_KEY = 'token';
 
 
 export default {
-  obtenerAnuncios: async function() {
+  obtenerAnuncios: async function(query=null) {
 
     const usuarioActual = await this.identificarUsuario();
-    const url = `${BASE_URL}/api/anuncios?_expand=user&_sort=id&_order=desc`;
+    let url = `${BASE_URL}/api/anuncios?_expand=user&_sort=id&_order=desc`;
+    if (query) {
+      url += `&q=${query}`
+  }
     const respuesta = await fetch(url);
     if (respuesta.ok) {
       const datos = await respuesta.json();
@@ -21,6 +24,7 @@ export default {
             descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
             foto: anuncio.foto || null,
             date: anuncio.createdAt || anuncio.updatedAt,
+            id:anuncio.id,
             autor: anuncio.user.username,
             puedeSerBorrado: usuarioActual ? usuarioActual.userId ==anuncio.userId: false
         }
@@ -31,9 +35,24 @@ export default {
   },
 
 
-  post: async function(url, postData, json=true) {
+    post: async function(url, postData, json=true) {
+      return await this.request('POST', url, postData, json);
+    },
+
+    delete: async function(url) {
+      return await this.request('DELETE', url, {});
+    },
+    get: async function(url) {
+      return await this.request('GET', url, {});
+    },
+
+    put: async function(url, putData, json=true) {
+    return await this.request('PUT', url, putData, json);
+    },
+
+    request: async function(method, url, postData, json=true) {
     const config = {
-        method: 'POST',
+        method: method,
         headers: {},
         body: null
     };
@@ -115,7 +134,15 @@ export default {
     } catch (error) {
         return null;
     }
-  }
+  },
+
+  borrarAnuncio: async function(anuncio){
+    const url = `${BASE_URL}/api/anuncios/${anuncio.id}`;
+    return await this.delete(url);
+  },
+
+  idAnuncio: {},
+  
 
 };
 

@@ -70,7 +70,7 @@ export default class NewAnuncioFormController extends BaseController{
 
         this.elemento.addEventListener('submit', async evento => {
             evento.preventDefault();  // cancelamos el envío del formulario (comportamiento por defecto)
-            debugger;
+            
             const anuncio = {
                 nombre:this.elemento.elements.nombre.value,
                 precio: this.elemento.elements.precio.value,
