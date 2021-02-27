@@ -138,7 +138,9 @@ export default {
   },
 
   borrarAnuncio: async function(anuncio){
+    console.log('id desde borraranuncio',anuncio)
     const url = `${BASE_URL}/api/anuncios/${anuncio.id}`;
+    
     return await this.delete(url);
   },
 
