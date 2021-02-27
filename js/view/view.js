@@ -1,24 +1,21 @@
-
-
-export const vistaAnuncio = (anuncio) =>{
-
-  let deleteButtonHTML = '';
+export const vistaAnuncio = (anuncio) => {
+  let deleteButtonHTML = "";
   if (anuncio.puedeSerBorrado) {
     deleteButtonHTML = '<button class="button is-danger">Borrar</button>';
   }
 
-  let imgHTML= '';
-  if(anuncio.foto){
-    imgHTML=`<div class="card-image">
+  let imgHTML = "";
+  if (anuncio.foto) {
+    imgHTML = `<div class="card-image">
     <figure class="image is-4by3">
       <img
         src="${anuncio.foto}"
         alt="Placeholder image"
       />
     </figure>
-  </div>`
+  </div>`;
   }
-    return `<div class="card">
+  return `<div class="card">
     ${imgHTML}
     <div class="card-content">
       <div class="media">
@@ -40,13 +37,10 @@ export const vistaAnuncio = (anuncio) =>{
         ${deleteButtonHTML}
       </div>
     </div>
-  </div>`
+  </div>`;
+};
 
-}
-
-export const vistaError = (errorMensaje) =>{
-
-
+export const vistaError = (errorMensaje) => {
   return `<article class="message is-danger">
   <div class="message-header">
     <p>Error</p>
@@ -55,6 +49,5 @@ export const vistaError = (errorMensaje) =>{
   <div class="message-body">
     ${errorMensaje}
   </div>
-</article>`
-
-}
+</article>`;
+};

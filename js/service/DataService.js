@@ -141,7 +141,7 @@ export default {
     return await this.delete(url);
   },
 
-  idAnuncio: {},
+
   
 
 };
