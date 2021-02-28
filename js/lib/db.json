@@ -1,45 +1,176 @@
-[
-  {
-    "nombre": "bicicleta",
-    "operacion": "venta",
-    "precio": 230.15,
-    "descripcion": "Vendo bicicleta nueva, solo se le ha dado un uso. La vendo por no usarla ",
-    "foto": "bici.jpg",
-    "tags": ["lifestyle", "movilidad", "articulos"]
-  },
-  {
-    "nombre": "moto",
-    "operacion": "compra",
-    "precio": 1650.0,
-    "descripcion": " Compro motro Marca Rata, usada de no me importa el estado",
-    "foto": "moto.jpg",
-    "tags": ["lifestyle", "movilidad", "articulos"]
-  },
-  {
-    "nombre": "coche",
-    "operacion": "venta",
-    "precio": 11650.0,
-    "descripcion": "Peugeot 406 Sedan en Toledo",
-    "foto": "cpche.jpg",
-    "tags": ["lifestyle", "movilidad", "articulos"]
-  },
-  {
-    "nombre": "cama",
-    "operacion": "compra",
-    "precio": 650.0,
-    "descripcion": "able abatible. Gran capacidad. Colchón Flex. Medidas 150x190",
-    "foto": "cama.jpg",
-    "tags": ["lifestyle", "house", "articulos"]
-  },
-  {
-    "nombre": "Iphone 6S",
-    "operacion": "venta",
-    "precio": 500,
-    "descripcion": "Iphone 6s de 32gb Prácticamente sin uso.",
-    "foto": "iphone6s.jpg",
-    "tags": ["lifestyle", "mobile", "articulos"]
-  }
-  
-]
-
-https://gist.githubusercontent.com/Jatriana/915538990ce0448e1b44a25d0b43ceb2/raw/0b17ed63638cf90dbd4ebe0be073b90372de7654/anuncios.json
+{
+  "anuncios": [
+    {
+      "nombre": "bicicleta",
+      "operacion": "venta",
+      "precio": 230.15,
+      "descripcion": "Vendo bicicleta nueva, solo se le ha dado un uso. La vendo por no usarla ",
+      "foto": "bici.jpg",
+      "userId": 1,
+      "createdAt": "2021-02-01T19:25:36.038Z",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "nombre": "moto",
+      "operacion": "compra",
+      "precio": 1650,
+      "descripcion": " Compro motro Marca Rata, usada de no me importa el estado",
+      "foto": "moto.jpg",
+      "createdAt": "2021-02-01T19:25:36.038Z",
+      "id": 2
+    },
+    {
+      "nombre": "coche",
+      "operacion": "venta",
+      "precio": 11650,
+      "descripcion": "Peugeot 406 Sedan en Toledo",
+      "foto": null,
+      "userId": 1,
+      "createdAt": "2021-02-01T19:25:36.038Z",
+      "id": 3
+    },
+    {
+      "nombre": "cama",
+      "operacion": "compra",
+      "precio": 650,
+      "descripcion": "able abatible. Gran capacidad. Colchón Flex. Medidas 150x190",
+      "foto": null,
+      "userId": 5,
+      "createdAt": "2021-02-01T19:25:36.038Z",
+      "id": 4
+    },
+    {
+      "nombre": "Iphone 6S",
+      "operacion": "venta",
+      "precio": 500,
+      "descripcion": "Iphone 6s de 32gb Prácticamente sin uso.",
+      "foto": "http://127.0.0.1:8000//iphone6s.jpg",
+      "userId": 5,
+      "createdAt": "2021-02-01T19:25:36.038Z",
+      "id": 5
+    },
+    {
+      "nombre": "portatil",
+      "precio": "450",
+      "operacion": "compro",
+      "descripcion": "dell insperon 1500",
+      "foto": null,
+      "userId": 5,
+      "updatedAt": "2021-02-24T17:29:14.352Z",
+      "id": 7
+    },
+    {
+      "nombre": "gafas sol",
+      "precio": "50",
+      "operacion": "venta",
+      "descripcion": "Ray ban aviator",
+      "foto": null,
+      "userId": 5,
+      "updatedAt": "2021-02-24T19:35:47.973Z",
+      "id": 9
+    },
+    {
+      "nombre": "televisor",
+      "precio": "250",
+      "operacion": "venta",
+      "descripcion": "LG 4K 75 pulgadas",
+      "foto": null,
+      "userId": 5,
+      "updatedAt": "2021-02-24T22:21:08.033Z",
+      "id": 10
+    },
+    {
+      "nombre": "auriculares",
+      "precio": "30",
+      "operacion": "compra",
+      "descripcion": "kZ 4 driver armadura 3 vias ",
+      "foto": null,
+      "userId": 5,
+      "updatedAt": "2021-02-24T22:24:11.435Z",
+      "id": 11
+    },
+    {
+      "nombre": "televisor",
+      "precio": "450",
+      "operacion": "venta",
+      "descripcion": "sansung serie 7 4k",
+      "foto": null,
+      "userId": 5,
+      "updatedAt": "2021-02-25T06:58:26.227Z",
+      "id": 12
+    },
+    {
+      "nombre": "coche",
+      "precio": "4500",
+      "operacion": "venta",
+      "descripcion": "Audia A5",
+      "foto": "http://127.0.0.1:8000//file-1614286490785.jpg",
+      "userId": 5,
+      "updatedAt": "2021-02-25T20:54:50.797Z",
+      "id": 15
+    },
+    {
+      "nombre": "coche",
+      "precio": "asasa",
+      "operacion": "sasasa",
+      "descripcion": "sasasa",
+      "foto": null,
+      "userId": 7,
+      "updatedAt": "2021-02-27T23:26:02.183Z",
+      "id": 16
+    },
+    {
+      "nombre": "wqwqw",
+      "precio": "wqwq",
+      "operacion": "wqwqw",
+      "descripcion": "qwqwq",
+      "foto": null,
+      "userId": 8,
+      "updatedAt": "2021-02-28T14:32:20.163Z",
+      "id": 17
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "aaaa@aa.net",
+      "password": "$2b$10$eUaYP77zzk31UhVqTR.bpOSqcr0gWkGtKbxb0Aog15306eiv3g.na"
+    },
+    {
+      "id": 2,
+      "username": "qqqq@aa.net",
+      "password": "$2b$10$s809gUxPZmPBxWJgVJjSY.s7KWP1LgRre49MtpO7u60qJrS3yZRvS"
+    },
+    {
+      "id": 3,
+      "username": "qq@aa.com",
+      "password": "$2b$10$s809gUxPZmPBxWJgVJjSY.H5adntcxw19shmtlrLYgNdw73gpe1Cq"
+    },
+    {
+      "id": 4,
+      "username": "aaaa2@aa.net",
+      "password": "$2b$10$s809gUxPZmPBxWJgVJjSY.evZWDFUhSPK42oSpmDA/znXIYogkIeO"
+    },
+    {
+      "username": "zz@zz.com",
+      "password": "$2b$10$xt7Gm8hT75oLYlJR2xK0we63SQHjY6Es0.4JAFh6pgWXjvfKrFr5C",
+      "id": 5
+    },
+    {
+      "username": "aa@aa.com",
+      "password": "$2b$10$xt7Gm8hT75oLYlJR2xK0weGKv0nE/mBh.RJYnGe26aoxgzZhw.eEq",
+      "id": 6
+    },
+    {
+      "username": "xx@xx.com",
+      "password": "$2b$10$X6gR8pqJa7Aev3IwRlvkgeVaoGMb015ib9/g1u0U1utAKpcNlXDPi",
+      "id": 7
+    },
+    {
+      "username": "ww@ww.com",
+      "password": "$2b$10$efOxETxyt6215o5zhtzRmOhMGLyi8YOsFyvGU31zV.Htc4t08fz3q",
+      "id": 8
+    }
+  ]
+}
