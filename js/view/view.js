@@ -31,7 +31,7 @@ export const vistaAnuncio = (anuncio) => {
          ${anuncio.descripcion}
          <a>${anuncio.autor}</a>.
          <div class "Editar">
-        <a href="#">EDITAR</a>
+        <a href="#"></a>
         </div> 
         <br />
         <time datetime="${anuncio.date}">${anuncio.date}</time>
