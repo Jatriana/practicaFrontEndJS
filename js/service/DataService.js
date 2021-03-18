@@ -20,8 +20,8 @@ export default {
       return datos.map(anuncio =>{
         return{
             nombre: anuncio.nombre.replace(/(<([^>]+)>)/gi, ""),
+            precio : anuncio.precio.replace(/(<([^>]+)>)/gi, ""),
             operacion: anuncio.operacion.replace(/(<([^>]+)>)/gi, ""),
-            precio : anuncio.precio,
             descripcion: anuncio.descripcion.replace(/(<([^>]+)>)/gi, ""),
             foto: anuncio.foto || null,
             date: anuncio.createdAt || anuncio.updatedAt,
