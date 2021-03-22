@@ -35,7 +35,6 @@ export default class RegisterFormController extends BaseController {
     this.elemento.querySelectorAll('input').forEach((input) => {
       const button = this.elemento.querySelector('button');
       input.addEventListener('keyup', (event) => {
-        console.log('estoy escribiendo ', this.elemento.checkValidity());
         // si el input es OK lo marco en verde, si no, en rojo
         if (input.validity.valid) {
           input.classList.add('is-success');

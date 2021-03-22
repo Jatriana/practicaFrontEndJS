@@ -1,29 +1,28 @@
-import BaseController from "./BaseController.js";
-import DataService from "../service/DataService.js";
-import { vistaAnuncio } from "../view/view.js";
+import BaseController from './BaseController.js';
+import DataService from '../service/DataService.js';
+import { vistaAnuncio } from '../view/view.js';
 
 export default class PostsDetailsController extends BaseController {
   anuncioDetallado(anuncio) {
     let url = new URL(window.location.href);
-    let id = url.searchParams.get("id");
+    let id = url.searchParams.get('id');
 
     for (const anuncioDetalle of anuncio) {
       if (anuncioDetalle.id == id) {
-        const article = document.createElement("article");
+        const article = document.createElement('article');
         article.innerHTML = vistaAnuncio(anuncioDetalle);
         this.elemento.appendChild(article);
 
-        const borrarButton = article.querySelector("button");
+        const borrarButton = article.querySelector('button');
         if (borrarButton) {
-          borrarButton.addEventListener("click", async (evento) => {
+          borrarButton.addEventListener('click', async (evento) => {
             const confirmacionBorrado = confirm(
-              "¿seguro que quieres borrar el anuncio?"
+              '¿seguro que quieres borrar el anuncio?'
             );
             if (confirmacionBorrado) {
-              console.log("borrar el anuncio", confirmacionBorrado);
               await DataService.borrarAnuncio(anuncioDetalle);
               article.remove();
-              window.location.href='/index.html';
+              window.location.href = '/index.html';
             }
           });
         }

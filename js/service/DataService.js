@@ -111,7 +111,7 @@ export default {
     form.append('file', image);
     const url = `${BASE_URL}/upload`;
     const response = await this.post(url, form, false);
-    console.log('subirImagen', response);
+
     return response.path || null;
   },
 
@@ -132,7 +132,6 @@ export default {
   },
 
   borrarAnuncio: async function (anuncio) {
-    console.log('id desde borraranuncio', anuncio);
     const url = `${BASE_URL}/api/anuncios/${anuncio.id}`;
 
     return await this.delete(url);
