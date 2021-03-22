@@ -3,7 +3,7 @@
     {
       "nombre": "bicicleta",
       "operacion": "venta",
-      "precio": 230.15,
+      "precio": "450",
       "descripcion": "Vendo bicicleta nueva, solo se le ha dado un uso. La vendo por no usarla ",
       "foto": "bici.jpg",
       "userId": 1,
@@ -14,7 +14,7 @@
       "userId": 1,
       "nombre": "moto",
       "operacion": "compra",
-      "precio": 1650,
+      "precio": "450",
       "descripcion": " Compro motro Marca Rata, usada de no me importa el estado",
       "foto": "moto.jpg",
       "createdAt": "2021-02-01T19:25:36.038Z",
@@ -23,7 +23,7 @@
     {
       "nombre": "coche",
       "operacion": "venta",
-      "precio": 11650,
+      "precio": "450",
       "descripcion": "Peugeot 406 Sedan en Toledo",
       "foto": null,
       "userId": 1,
@@ -33,7 +33,7 @@
     {
       "nombre": "cama",
       "operacion": "compra",
-      "precio": 650,
+      "precio": "450",
       "descripcion": "able abatible. Gran capacidad. Colchón Flex. Medidas 150x190",
       "foto": null,
       "userId": 5,
@@ -43,7 +43,7 @@
     {
       "nombre": "Iphone 6S",
       "operacion": "venta",
-      "precio": 500,
+      "precio": "450",
       "descripcion": "Iphone 6s de 32gb Prácticamente sin uso.",
       "foto": "http://127.0.0.1:8000//iphone6s.jpg",
       "userId": 5,
